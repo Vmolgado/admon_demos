@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Administración Demos TTC</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Font Awesome actualizado -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+
+  <style>
+    /* ---------- Estilos generales ---------- */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #58b0b3;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: relative;
+    }
+    header .logo {
+      height: 50px;
+    }
+    header .header-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    /* ---------- Contenido principal ---------- */
+    main {
+      margin: 20px;
+      max-width: 1200px;
+    }
+
+    /* ---------- Barra de búsqueda y ícono ---------- */
+    .search-container {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-container input {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .search-container .icon-download {
+      color: #28a745;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .search-container .icon-download:hover {
+      color: #218838;
+    }
+
+    /* ---------- Tabla ---------- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* ---------- Cabecera fija (sticky) ---------- */
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: #58b0b3;
+      color: #fff;
+      z-index: 2;
+    }
+
+    /* ---------- Pie de página ---------- */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #58b0b3;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="header-title">Administración Demos TTC</div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Barra de búsqueda y botón de descarga -->
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Buscar en la tabla..." />
+      <i class="fa-solid fa-file-excel icon-download" id="download-excel"></i>
+    </div>
+
+    <!-- Tabla -->
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>FOLIO</th>
+          <th>FECHA</th>
+          <th>MES</th>
+          <th>AÑO EN CURSO</th>
+          <th>SD</th>
+          <th>CLIENTE</th>
+          <th>ASESOR DE VENTAS</th>
+          <th>EMAIL ASESOR VENTAS</th>
+          <th>TIPO DE SERVICIO</th>
+          <th>ESTATUS PLATAFORMA</th>
+          <th>TIPO DE HARDWARE</th>
+          <th>DISPOSITIVO</th>
+          <th>IMEI</th>
+          <th>SIM</th>
+          <th>DIAS RESTANTES</th>
+          <th>ESTATUS DEMO</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    © 2025 AVL MOLGADO Versión 2.1.3
+  </footer>
+
+  <!-- Vincular el archivo JS externo -->
+  <script src="script.js"></script>
+  <!-- Biblioteca SheetJS para descargar Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>
